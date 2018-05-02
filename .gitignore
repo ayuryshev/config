@@ -100,7 +100,6 @@ nautilus
 nitrogen
 nteract
 NuGet
-nvim
 orage
 pgmodeler
 pitivi
@@ -152,3 +151,4 @@ xkb
 yarn
 yelp
 zathura
+nvim/.netrwhist
