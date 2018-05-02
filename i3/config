@@ -3,7 +3,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $TERMINAL termite
+set $TERMINAL deepin-terminal
 default_border pixel 5
 font pango:DejaVu Sans Mono 16
 floating_modifier $mod
@@ -11,9 +11,10 @@ floating_modifier $mod
 exec --no-startup-id redshift-gtk
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec deepin-terminal
 bindsym $mod+Shift+f exec firefox
-bindsym $mod+Shift+b exec chromium
+bindsym $mod+Shift+h exec chromium
 
 
 # kill focused window
@@ -55,6 +56,11 @@ bindsym $mod+Tab exec rofi -show window -location 0  -width 1800  -columns 5
 
 
 bindsym $mod+o exec "i3-msg open"
+bindsym $mod+b exec "i3-msg	border toggle"
+bindsym $mod+g exec "i3-msg gaps inner set 150"
+bindsym $mod+Shift+g exec "i3-msg gaps all  inner set 6"
+bindsym Pause exec "i3-msg gaps inner all set 150"
+bindsym $mod+Pause exec "i3-msg gaps inner all set 6"
 
 #bindsym Mod1+Mod4+Right move right
 
