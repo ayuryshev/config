@@ -148,7 +148,7 @@ bindsym $mod+r mode "resize"
 
 
 # keyboard
-exec --no-startup-id setxkbmap -layout us,ru -option "grp:rctrl_toggle" -option caps:super -option "keypad:pointerkeys"
+exec --no-startup-id setxkbmap -layout us,ru -option "grp:rctrl_toggle" -option caps:super  -option compose:ralt 
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -159,17 +159,17 @@ bar {
   status_command i3status
         tray_output primary
   colors {
-    separator #7d7d7d
-    background #141414
-    statusline #00b0ef
-    focused_workspace #00b0ef #141414 #00b0ef
-    active_workspace #141414 #141414 #00b0ef
-    inactive_workspace #141414 #141414 #7d7d7d
-    urgent_workspace #ff7066 #141414 #ff7066
+    separator #928374
+    background #282828
+    statusline #ebdbb2
+    focused_workspace #689d6a #689d6a #282828
+    active_workspace #1d2021 #1d2021 #928374
+    inactive_workspace #32302f #32302f #928374
+    urgent_workspace #cc241d #cc241d #ebdbb2
   }
 }
 
-client.focused #00b0ef #00b0ef #141414 #ff7066
-client.focused_inactive #141414 #141414 #00b0ef #472b2a
-client.unfocused #141414 #141414 #7d7d7d #141414
-client.urgent #ff7066 #ff7066 #141414 #ff7066
+client.focused #689d6a #689d6a #282828 #282828
+client.focused_inactive #1d2021 #1d2021 #928374 #282828
+client.unfocused #32302f #32302f #928374 #282828
+client.urgent #cc241d #cc241d #ebdbb2 #282828
