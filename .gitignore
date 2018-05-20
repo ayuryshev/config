@@ -35,7 +35,6 @@ freerdp
 freshwrapper-data
 gdlv
 gedit
-git
 gnome-builder
 gnome-control-center
 gnome-session
@@ -155,3 +154,4 @@ i3/config_old
 gcloud
 smplayer/file_settings
 smplayer
+NERD_tree_1

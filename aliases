@@ -52,7 +52,8 @@ alias gs='git status'
 alias gg="googler --time y1 -n 6"
 alias ya="yaourt"
 
-alias cdw='cd /home/isk/iplatforms/system42'
+alias cdw='cd /home/isk/work'
 alias cdj='cd /home/isk/jst'
-alias c='code . -n -g '
-#alias nbg='feh --bg-tile "$(find ~/Pictures/* |shuf | head -1)"'
+alias c='code-git . -n -g '
+alias nbg='feh --bg-tile "$(find ~/Pictures/* |shuf | head -1)"'
+alias cdc=cd /home/isk/.config

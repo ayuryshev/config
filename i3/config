@@ -1,26 +1,25 @@
-
 set $mod Mod4
 set $TERMINAL deepin-terminal
-default_border pixel 5
+default_border pixel 2
 font pango:DejaVu Sans Mono 16
 floating_modifier $mod
 
 exec --no-startup-id redshift-gtk
+workspace_auto_back_and_forth yes
+exec --no-startup-id i3-msg gaps inner all set 6
+# exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec deepin-terminal
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Return exec termite
+bindsym $mod+Shift+Return exec deepin-terminal
 bindsym $mod+Shift+h exec chromium
-
 
 # kill focused window
 bindsym $mod+Shift+q kill
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+l focus left
+bindsym $mod+k focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -29,39 +28,37 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # wallpapers
-bindsym $mod+n exec nbg
-bindsym $mod+Shift+n exec readlink ~/Pictures/wallpaper >> ~/Pictures/wallpapers.txt
-exec --no-startup-id feh --bg-max "$(shuf ~/Pictures/wallpapers.txt |head -1)"
-exec --no-startup-id i3-msg gaps inner all set 6
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp01
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp02
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp03
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp04
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp05
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp06
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp07
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp08
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp09
+exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp10
+exec --no-startup-id feh --bg-max ~/Pictures/wlp01 
+
 
 bindsym $mod+Shift+w mode "wallpaper"
 mode "wallpaper" {
-
 		bindsym n exec nbg
 		bindsym s exec readlink ~/Pictures/wallpaper >> ~/Pictures/wallpapers.txt
-        # back to normal: Enter or Escape
-		
+    bindsym d exec mv "$(readlink ~/Pictures/wallpaper)" ~/Pictures/rm
 		bindsym space   mode "default"
 		bindsym Return mode "default"
 }
 
 
 # rofi
-bindsym $mod+d exec rofi -show run -location 1 -width 1920  -columns 3 
-bindsym $mod+x exec rofi -show window -location 4 -width 1800  -columns 5 
+bindsym $mod+d exec rofi -show drun -location 0  -width 1800  -columns 5 
 bindsym $mod+Tab exec rofi -show window -location 0  -width 1800  -columns 5 
 
-
-bindsym $mod+o exec "i3-msg open"
-bindsym $mod+b exec "i3-msg	border toggle"
+bindsym $mod+o open
+bindsym $mod+b border toggle
 bindsym $mod+g exec "i3-msg gaps inner set 150"
 bindsym $mod+Shift+g exec "i3-msg gaps all  inner set 6"
-bindsym Pause exec "i3-msg gaps inner all set 100"
-bindsym Shift+Pause exec --no-startup-id "i3-msg gaps inner all set 6"
-
-#bindsym Mod1+Mod4+Right move right
-
-#bindsym $mod+mod3+Right move right # split in horizontal orientation bindsym $mod+h split h
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -79,44 +76,54 @@ bindsym Mod4+Shift+Right move right
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+s sticky toggle
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+f floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+c focus child
+bindsym $mod+u [urgent=latest] focus
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace number 1; exec feh --bg-max ~/Pictures/wlp01
+bindsym $mod+2 workspace number 2; exec feh --bg-max ~/Pictures/wlp02
+bindsym $mod+3 workspace number 3; exec feh --bg-max ~/Pictures/wlp03
+bindsym $mod+4 workspace number 4; exec feh --bg-max ~/Pictures/wlp04
+bindsym $mod+5 workspace number 5; exec feh --bg-max ~/Pictures/wlp05
+bindsym $mod+6 workspace number 6; exec feh --bg-max ~/Pictures/wlp06
+bindsym $mod+7 workspace number 7; exec feh --bg-max ~/Pictures/wlp07
+bindsym $mod+8 workspace number 8; exec feh --bg-max ~/Pictures/wlp08
+bindsym $mod+9 workspace number 9; exec feh --bg-max ~/Pictures/wlp09
+bindsym $mod+0 workspace number 10; exec feh --bg-max ~/Pictures/wlp10
 
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+                                                 
+bindsym $mod+comma workspace next                
+bindsym $mod+period workspace prev
+
+bindsym $mod+Shift+plus scratchpad show
+bindsym $mod+x scratchpad show
+bindsym $mod+Shift+x move container to scratchpad
+bindsym $mod+Shift+underscore move container to scratchpad
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -128,7 +135,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
-		bindsym semicolon resize grow width 10 px or 10 ppt
+		    bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 30 px or 30 ppt
@@ -143,6 +150,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+for_window [class="Termite"] border pixel 4
+for_window [class="Deepin-terminal"] border pixel 4
+bind $mod+Shift+o [title="i3:*"] kill 
 
 # keyboard
 exec --no-startup-id setxkbmap -layout us,ru -option "grp:rctrl_toggle" -option caps:super  -option compose:ralt 
@@ -156,17 +166,18 @@ bar {
   status_command i3status
         tray_output primary
   colors {
-    separator #928374
-    background #282828
-    statusline #ebdbb2
-    focused_workspace #689d6a #689d6a #282828
-    active_workspace #1d2021 #1d2021 #928374
-    inactive_workspace #32302f #32302f #928374
-    urgent_workspace #cc241d #cc241d #ebdbb2
+    separator #666666
+    background #222222
+    statusline #dddddd
+    focused_workspace #0088CC #0088CC #ffffff
+    active_workspace #333333 #333333 #ffffff
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace #2f343a #900000 #ffffff
   }
 }
 
-client.focused #689d6a #689d6a #282828 #282828
-client.focused_inactive #1d2021 #1d2021 #928374 #282828
-client.unfocused #32302f #32302f #928374 #282828
-client.urgent #cc241d #cc241d #ebdbb2 #282828
+
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000

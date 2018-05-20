@@ -81,8 +81,8 @@ endif
 set termguicolors
 set guifont=FantasqueSansMono\ Nerd\ Font\ Regular\ 14
 
-colorscheme molokai
-set background=dark
+set background=light
+colorscheme gruvbox
 let g:airline_powerline_fonts=1
 
 set completeopt=menu,menuone    " Show popup menu, even if there is one entry
