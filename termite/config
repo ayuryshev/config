@@ -7,8 +7,9 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Inconsolata 20
-#font = Input\ Mono:pixelsize=24:antialias=true:autohint=true
+#font = Inconsolata 20
+#font = Input Mono 19 
+font = Go Mono 19
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal

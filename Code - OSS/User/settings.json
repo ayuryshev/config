@@ -13,7 +13,7 @@
     "editor.fontSize": 19,
     "editor.fontFamily": "Input Mono NF",
     "editor.fontLigatures": true,
-    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.colorTheme": "Default Light+",
     "editor.formatOnSave": true,
     "python.formatting.provider": "yapf",
     "files.autoSave": "afterDelay",

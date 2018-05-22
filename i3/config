@@ -1,4 +1,5 @@
 set $mod Mod4
+
 set $TERMINAL deepin-terminal
 default_border pixel 2
 font pango:DejaVu Sans Mono 16
@@ -17,9 +18,6 @@ bindsym $mod+Shift+h exec chromium
 
 # kill focused window
 bindsym $mod+Shift+q kill
-# change focus
-bindsym $mod+l focus left
-bindsym $mod+k focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -45,7 +43,7 @@ bindsym $mod+Shift+w mode "wallpaper"
 mode "wallpaper" {
 		bindsym n exec nbg
 		bindsym s exec readlink ~/Pictures/wallpaper >> ~/Pictures/wallpapers.txt
-    bindsym d exec mv "$(readlink ~/Pictures/wallpaper)" ~/Pictures/rm
+	    bindsym d exec mv "$(readlink ~/Pictures/wallpaper)" ~/Pictures/rm
 		bindsym space   mode "default"
 		bindsym Return mode "default"
 }
@@ -55,7 +53,7 @@ mode "wallpaper" {
 bindsym $mod+d exec rofi -show drun -location 0  -width 1800  -columns 5 
 bindsym $mod+Tab exec rofi -show window -location 0  -width 1800  -columns 5 
 
-bindsym $mod+o open
+# bindsym $mod+o open
 bindsym $mod+b border toggle
 bindsym $mod+g exec "i3-msg gaps inner set 150"
 bindsym $mod+Shift+g exec "i3-msg gaps all  inner set 6"
@@ -66,11 +64,12 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-# alternatively, you can use the cursor keys:
+# alternatively, you can use the cursor keys:/:
 bindsym Mod4+Shift+Left move left
 bindsym Mod4+Shift+Down move down
 bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+Right move right
+
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -92,6 +91,27 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+c focus child
 bindsym $mod+u [urgent=latest] focus
+
+
+bindsym $mod+i			move to absolute position 0 0;		resize set 960 540
+bindsym $mod+o			move to absolute position 480 0 ;	resize set 960 540
+bindsym $mod+p			move to absolute position 960 0 ;	resize set 960 540
+bindsym $mod+k			move to absolute position 0 0;		resize set 960 1080; mode superfloating
+bindsym $mod+l			move to absolute position 480 0 ;	resize set 960 1080; mode superfloating
+bindsym $mod+semicolon	move to absolute position 960 0 ;	resize set 960 1080; mode superfloating
+bindsym $mod+comma		move to absolute position 0 540;	resize set 960 540
+bindsym $mod+period		move to absolute position 480 540 ; resize set 960 540
+bindsym $mod+slash		move to absolute position 960 540 ; resize set 960 540
+
+mode "superfloating"{
+	bindsym $mod+k move to absolute position 0 0;			resize set 1460 1080; mode "default"
+	bindsym $mod+l move to absolute position 200 0 ;		resize set 1460 1080; mode "default"
+	bindsym $mod+semicolon move to absolute position 960 0; resize set 1460 1080; mode "default" 
+	bindsym space mode "default"
+	bindsym Enter mode "default"
+}
+
+
 
 # switch to workspace
 bindsym $mod+1 workspace number 1; exec feh --bg-max ~/Pictures/wlp01
@@ -116,27 +136,22 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
                                                  
-bindsym $mod+comma workspace next                
-bindsym $mod+period workspace prev
+bindsym $mod+z workspace next                
+bindsym $mod+Shift+z workspace prev
 
-bindsym $mod+Shift+plus scratchpad show
 bindsym $mod+x scratchpad show
 bindsym $mod+Shift+x move container to scratchpad
-bindsym $mod+Shift+underscore move container to scratchpad
 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
-		    bindsym semicolon resize grow width 10 px or 10 ppt
-
+		bindsym semicolon resize grow width 10 px or 10 ppt
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 30 px or 30 ppt
         bindsym Down resize grow height 30 px or 30 ppt
@@ -146,8 +161,8 @@ mode "resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+		bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 for_window [class="Termite"] border pixel 4
