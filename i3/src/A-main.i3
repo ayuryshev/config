@@ -60,7 +60,7 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 # focus the child container
-bindsym $mod+c focus child
+# bindsym $mod+c focus child
 bindsym $mod+u [urgent=latest] focus
 
 
@@ -115,7 +115,7 @@ bindsym $mod+Shift+x move container to scratchpad
 
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
