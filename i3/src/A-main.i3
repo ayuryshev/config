@@ -1,17 +1,16 @@
 set $mod Mod4
 
-set $TERMINAL deepin-terminal
+
 default_border pixel 2
 font pango:DejaVu Sans Mono 16
 floating_modifier $mod
 
 exec --no-startup-id redshift-gtk
 workspace_auto_back_and_forth yes
-exec --no-startup-id i3-msg gaps inner all set 6
-# exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
+set $TERMINAL termite
 bindsym $mod+Return exec termite
 bindsym $mod+Shift+Return exec deepin-terminal
 bindsym $mod+Shift+h exec chromium
@@ -25,29 +24,8 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# wallpapers
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp01
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp02
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp03
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp04
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp05
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp06
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp07
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp08
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp09
-exec --no-startup-id exec ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" ~/Pictures/wlp10
-exec --no-startup-id feh --bg-max ~/Pictures/wlp01 
-
-
-bindsym $mod+Shift+w mode "wallpaper"
-mode "wallpaper" {
-		bindsym n exec nbg
-		bindsym s exec readlink ~/Pictures/wallpaper >> ~/Pictures/wallpapers.txt
-	    bindsym d exec mv "$(readlink ~/Pictures/wallpaper)" ~/Pictures/rm
-		bindsym space   mode "default"
-		bindsym Return mode "default"
-}
-
+# keyboard
+exec --no-startup-id setxkbmap -layout us,ru -option "grp:rctrl_toggle" -option caps:super  -option compose:ralt 
 
 # rofi
 bindsym $mod+d exec rofi -show drun -location 0  -width 1800  -columns 5 
@@ -59,17 +37,10 @@ bindsym $mod+g exec "i3-msg gaps inner set 150"
 bindsym $mod+Shift+g exec "i3-msg gaps all  inner set 6"
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:/:
-bindsym Mod4+Shift+Left move left
-bindsym Mod4+Shift+Down move down
-bindsym Mod4+Shift+Up move up
-bindsym Mod4+Shift+Right move right
-
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -167,32 +138,3 @@ bindsym $mod+r mode "resize"
 
 for_window [class="Termite"] border pixel 4
 for_window [class="Deepin-terminal"] border pixel 4
-bind $mod+Shift+o [title="i3:*"] kill 
-
-# keyboard
-exec --no-startup-id setxkbmap -layout us,ru -option "grp:rctrl_toggle" -option caps:super  -option compose:ralt 
-
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-  mode hide
-  i3bar_command i3bar -t
-  status_command i3status
-        tray_output primary
-  colors {
-    separator #666666
-    background #222222
-    statusline #dddddd
-    focused_workspace #0088CC #0088CC #ffffff
-    active_workspace #333333 #333333 #ffffff
-    inactive_workspace #333333 #333333 #888888
-    urgent_workspace #2f343a #900000 #ffffff
-  }
-}
-
-
-client.focused #0088CC #0088CC #ffffff #dddddd
-client.focused_inactive #333333 #333333 #888888 #292d2e
-client.unfocused #333333 #333333 #888888 #292d2e
-client.urgent #2f343a #900000 #ffffff #900000

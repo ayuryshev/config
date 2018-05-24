@@ -21,6 +21,11 @@
     "terminal.integrated.fontSize": 17,
     "markdown.preview.fontSize": 17,
     "editor.cursorStyle": "line",
-    "gitlens.historyExplorer.enabled": true,
+    "gitlens.historyExplorer.enabled": false,
     "workbench.iconTheme": "eq-material-theme-icons",
+    "markdown-pdf.outputDirectory": "output",
+    "markdown-pdf.outputDirectoryRelativePathFile": true,
+    "files.associations": {
+        "*.i3": "i3"
+    }
 }

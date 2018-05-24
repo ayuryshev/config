@@ -37,11 +37,11 @@ include "%L"
 
 # 🞡 🞢 🞣 🞤 ✚ 🞥 🞦 🞧   
 
-<Multi_key <c><r><1>					: "☩" 
-<Multi_key <c><r><2>					: "✙"
-<Multi_key <c><r><3>					: "⊕" 
-<Multi_key <c><r><4>					: "⛨" 
-<Multi_key <c><r><5>					: "✛" 
+<Multi_key> <c><r><1>					: "☩" 
+<Multi_key> <c><r><2>					: "✙"
+<Multi_key> <c><r><3>					: "⊕" 
+<Multi_key> <c><r><4>					: "⛨" 
+<Multi_key> <c><r><5>					: "✛" 
 #✙ 🞡 🞢 🞣 🞤 ✚ 🞥 🞦 🞧 ⛨ ✛ ✜
 #Latin cross
 #✝ 🕆 🕇 ✞ ✟ 🕈
