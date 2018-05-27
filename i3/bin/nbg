@@ -1,0 +1,4 @@
+#!/bin/sh
+ln -s -f "$(shuf -n 1 ~/Pictures/wallpapers.txt)" "/tmp/wlp/wlp$(cat /tmp/wlp/wlp_current)"
+feh --bg-max "/tmp/wlp/wlp$(cat /tmp/wlp/wlp_current)"
+#feh --bg-max "$(find ~/Pictures/* |shuf | head -1)"

@@ -34,7 +34,7 @@ exec --no-startup-id setxkbmap -layout us,ru -option "grp:rctrl_toggle" -option 
 bindsym $mod+d exec rofi -show drun -location 0  -width 1800  -columns 5 
 bindsym $mod+Tab exec rofi -show window -location 0  -width 1800  -columns 5 
 
-# bindsym $mod+o open
+
 bindsym $mod+b border toggle
 bindsym $mod+g exec "i3-msg gaps inner set 150"
 bindsym $mod+Shift+g exec "i3-msg gaps all  inner set 6"
@@ -87,18 +87,6 @@ mode "superfloating"{
 
 
 
-# switch to workspace
-bindsym $mod+1 workspace number 1; exec feh --bg-max ~/Pictures/wlp01
-bindsym $mod+2 workspace number 2; exec feh --bg-max ~/Pictures/wlp02
-bindsym $mod+3 workspace number 3; exec feh --bg-max ~/Pictures/wlp03
-bindsym $mod+4 workspace number 4; exec feh --bg-max ~/Pictures/wlp04
-bindsym $mod+5 workspace number 5; exec feh --bg-max ~/Pictures/wlp05
-bindsym $mod+6 workspace number 6; exec feh --bg-max ~/Pictures/wlp06
-bindsym $mod+7 workspace number 7; exec feh --bg-max ~/Pictures/wlp07
-bindsym $mod+8 workspace number 8; exec feh --bg-max ~/Pictures/wlp08
-bindsym $mod+9 workspace number 9; exec feh --bg-max ~/Pictures/wlp09
-bindsym $mod+0 workspace number 10; exec feh --bg-max ~/Pictures/wlp10
-
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -128,10 +116,10 @@ mode "resize" {
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 30 px or 30 ppt
         bindsym Down resize grow height 30 px or 30 ppt
-        bindsym Up resize shrink height 30 px or 30 ppt
+        bindsym Up resizwe shrink height 30 px or 30 ppt
         bindsym Right resize grow width 30 px or 30 ppt
 
-        # back to normal: Enter or Escape
+        # back to normj'al: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 		bindsym $mod+r mode "default"
