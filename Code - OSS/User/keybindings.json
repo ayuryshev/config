@@ -156,7 +156,11 @@
         "command": "-workbench.view.explorer"
     },
     {
-        "key": "ctrl+w c",
+        "key": "ctrl+q",
         "command": "workbench.action.closePanel"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
     }
 ]

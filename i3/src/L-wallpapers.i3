@@ -1,3 +1,7 @@
+#
+# Wallpapers
+#
+
 # wallpapers
 exec --no-startup-id exec ~/Pictures/gen_wlp.sh
 exec --no-startup-id feh --bg-max ~/Pictures/wlp01 

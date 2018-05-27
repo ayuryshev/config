@@ -1,3 +1,6 @@
+#
+# i3-style
+#
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

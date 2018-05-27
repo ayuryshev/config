@@ -16,6 +16,7 @@
     "workbench.colorTheme": "Default Light+",
     "editor.formatOnSave": true,
     "python.formatting.provider": "yapf",
+    // "javascript.formatting"
     "files.autoSave": "afterDelay",
     "workbench.activityBar.visible": false,
     "terminal.integrated.fontSize": 17,
@@ -27,5 +28,7 @@
     "markdown-pdf.outputDirectoryRelativePathFile": true,
     "files.associations": {
         "*.i3": "i3"
-    }
+    },
+    "eslint.autoFixOnSave": true,
+    "workbench.sideBar.location": "left"
 }

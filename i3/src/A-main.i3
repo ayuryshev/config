@@ -1,5 +1,8 @@
-set $mod Mod4
+#
+# Main
+#
 
+set $mod Mod4
 
 default_border pixel 2
 font pango:DejaVu Sans Mono 16
@@ -112,7 +115,6 @@ bindsym $mod+Shift+z workspace prev
 
 bindsym $mod+x scratchpad show
 bindsym $mod+Shift+x move container to scratchpad
-
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
