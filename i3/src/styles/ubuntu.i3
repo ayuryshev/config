@@ -2,6 +2,11 @@
 # i3-style - ubuntu
 #
 
+font pango:Ubuntu Mono 15
+# font pango:Fira Mono 14
+# font pango:Go Mono 14
+# font pango:Knack NF 14
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
