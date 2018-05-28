@@ -10,21 +10,26 @@ RUN_PATH = '/tmp/wlp'
 
 
 @click.command()
-@click.option('--new', 'action', flag_value='new', default=True)
+@click.option('--new', 'action', flag_value='new')
 @click.option('--save', 'action', flag_value='save')
 @click.option('--load', 'action', flag_value='load')
 @click.option('--shuffle', 'action', flag_value='shuffle')
-@click.option('--theme', default='', help='Theme number')
+@click.option('--theme', default='current_theme', help='Theme number')
 def wlp_theme(action, theme):
     """
         Theme saver
     """
     themes = glob.glob(f'{THEME_PATH}/[0-9][0-9][0-9]')
-    # if os.path.exists(CURRENT_THEME):
-    #     current_theme = os.readlink(CURRENT_THEME)
     theme_content = [
         os.readlink(lname) for lname in glob.glob("/tmp/wlp/wlp[0-9][0-9]")
     ]
+
+    def update_symlink(source, dest):
+        if source == dest:
+            return
+        if os.path.exists(dest):
+            os.remove(dest)
+        os.symlink(source, dest)
 
     if action == "load":
         theme_name = f'{THEME_PATH}/{theme}'
@@ -33,12 +38,8 @@ def wlp_theme(action, theme):
                 theme_content = f.read().split('\n')
                 for idx, fname in zip(range(1, 11), theme_content):
                     wlp_link = f'{RUN_PATH}/wlp{idx:02d}'
-                    os.remove(wlp_link)
-                    os.symlink(fname, wlp_link)
-                if theme_name != "current_theme":
-                    if os.path.exists(CURRENT_THEME):
-                        os.remove(CURRENT_THEME)
-                    os.symlink(theme_name, CURRENT_THEME)
+                    update_symlink(fname, wlp_link)
+                update_symlink(theme_name, CURRENT_THEME)
         return
 
     if action == 'new':
@@ -49,9 +50,7 @@ def wlp_theme(action, theme):
         theme_name = f'{THEME_PATH}/{last_number:03d}'
         with open(theme_name, 'w') as f:
             f.write("\n".join(theme_content))
-        if os.path.exists(CURRENT_THEME):
-            os.remove(CURRENT_THEME)
-        os.symlink(theme_name, CURRENT_THEME)
+        update_symlink(theme_name, CURRENT_THEME)
         return
 
     if action == "save":
@@ -65,8 +64,7 @@ def wlp_theme(action, theme):
             f.write("\n".join(theme_content))
         for idx, fname in zip(range(1, 11), theme_content):
             wlp_link = f'{RUN_PATH}/wlp{idx:02d}'
-            os.remove(wlp_link)
-            os.symlink(fname, wlp_link)
+            update_symlink(fname, wlp_link)
         return
 
 
