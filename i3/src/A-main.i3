@@ -16,7 +16,7 @@ workspace_auto_back_and_forth yes
 set $TERMINAL termite
 bindsym $mod+Return exec termite
 bindsym $mod+Shift+Return exec deepin-terminal
-bindsym $mod+Shift+h exec chromium
+bindsym $mod+Shift+h exec chrome
 
 # kill focused window
 bindsym $mod+Shift+q kill

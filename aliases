@@ -54,6 +54,6 @@ alias ya="yaourt"
 
 alias cdw='cd /home/isk/work'
 alias cdj='cd /home/isk/jst'
-alias c='code-git . -n -g '
+alias c='code . -n -g '
 alias nbg='feh --bg-tile "$(find ~/Pictures/* |shuf | head -1)"'
 alias cdc=cd /home/isk/.config
