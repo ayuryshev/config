@@ -107,7 +107,9 @@ bindsym $mod+Shift+x move container to scratchpad
 # reload the configuration file
 # bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+Pause restart
+
+# TODO: Divide A-main
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -116,15 +118,16 @@ mode "resize" {
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 30 px or 30 ppt
         bindsym Down resize grow height 30 px or 30 ppt
-        bindsym Up resizwe shrink height 30 px or 30 ppt
+        bindsym Up resize shrink height 30 px or 30 ppt
         bindsym Right resize grow width 30 px or 30 ppt
 
-        # back to normj'al: Enter or Escape
+        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
-		bindsym $mod+r mode "default"
+        bindsym space mode "default"
+		bindsym $mod+Shift+r mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+Shift+r mode "resize"
 
 for_window [class="Termite"] border pixel 4
 for_window [class="Deepin-terminal"] border pixel 4

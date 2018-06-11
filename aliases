@@ -28,12 +28,12 @@ alias st-id='st-gruvdark -f Input\ Mono:pixelsize=24:antialias=true:autohint=tru
 alias st-il='st-gruvlight -f Input\ Mono:pixelsize=24:antialias=true:autohint=true'
 
 # Colorschemes
-alias dc-zenburn='eval `dircolors /home/isk/linux/dircolors-zenburn/dircolors`'
-alias dc-solarized-universal='eval `dircolors /home/isk/linux/dircolors-solarized/dircolors.ansi-universal `'
-alias dc-solarized-dark='eval `dircolors /home/isk/linux/dircolors-solarized/dircolors.ansi-dark `'
-alias dc-solarized-light='eval `dircolors /home/isk/linux/dircolors-solarized/dircolors.ansi-light `'
-alias dc-noname='eval `dircolors /home/isk/linux/LS_COLORS/LS_COLORS`'
-alias dc-moonshine='eval `dircolors /home/isk/linux/dircolors-moonshine/dircolors.moonshine`'
+alias dc-zenburn='eval `dircolors /home/isk/.config/dircolors/zenburn.dircolors`'
+alias dc-solarized-universal='eval `dircolors /home/isk/.config/dircolors/ansi-universal.dircolors`' 
+alias dc-solarized-dark='eval `dircolors /home/isk/.config/dircolors/solarized-ansi-dark.dircolors`'
+alias dc-solarized-light='eval `dircolors /home/isk/.config/dircolors/solarized-ansi-light.dircolors`'
+alias dc-noname='eval `dircolors /home/isk/.config/dircolors/magnus.dircolors`'
+alias dc-moonshine='eval `dircolors /home/isk/.config/dircolors/moonshine.dircolors`'
 
 #docker
 alias dils='docker images'
