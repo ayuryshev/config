@@ -13,8 +13,8 @@ workspace_auto_back_and_forth yes
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-set $TERMINAL termite
-bindsym $mod+Return exec termite
+set $TERMINAL alacritty
+bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+Return exec deepin-terminal
 bindsym $mod+Shift+h exec chrome
 
