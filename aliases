@@ -53,7 +53,9 @@ alias gg="googler --time y1 -n 6"
 alias ya="yaourt"
 
 alias cdw='cd /home/isk/work'
-alias cdj='cd /home/isk/jst'
+alias cdv='cd /home/isk/Videos && ls'
+alias cdm='cd /home/isk/Music && ls'
+alias cdp='cd /home/isk/Pictures &&ls'
 alias c='code . -n -g '
 alias nbg='feh --bg-tile "$(find ~/Pictures/* |shuf | head -1)"'
 alias cdc=cd /home/isk/.config
