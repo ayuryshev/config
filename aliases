@@ -7,8 +7,9 @@ alias less=$PAGER
 alias zless=$PAGER
 
 # VS Code
-alias ncode='code-git -n'
-alias rcode='code-git -r'
+alias ncode='code -n'
+alias rcode='code -r'
+alias c='code . -n -g '
 
 # Noname
 alias DESC='sort -n -r'
@@ -56,6 +57,6 @@ alias cdw='cd /home/isk/work'
 alias cdv='cd /home/isk/Videos && ls'
 alias cdm='cd /home/isk/Music && ls'
 alias cdp='cd /home/isk/Pictures &&ls'
-alias c='code . -n -g '
 alias nbg='feh --bg-tile "$(find ~/Pictures/* |shuf | head -1)"'
-alias cdc=cd /home/isk/.config
+alias cdc='cd /home/isk/.config'
+alias psc='ps xawf -eo pid,user,cgroup,args'
