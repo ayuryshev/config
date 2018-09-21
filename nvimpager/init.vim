@@ -15,54 +15,42 @@ if dein#load_state('/home/isk/.local/share/dein')
   call dein#add('/home/isk/.local/share/dein/repos/github.com/Shougo/dein.vim')
 
   " Colorschemes
-  call dein#add('morhetz/gruvbox')
-  call dein#add('noahfrederick/vim-hemisu')
-  call dein#add('ctrlpvim/ctrlp.vim')
+  "call dein#add('morhetz/gruvbox')
+  "call dein#add('noahfrederick/vim-hemisu')
+  "call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('lifepillar/vim-solarized8')
-  call dein#add('tyrannicaltoucan/vim-deep-space')
-  call dein#add('zanglg/nova.vim')
+  "call dein#add('tyrannicaltoucan/vim-deep-space')
+  "call dein#add('zanglg/nova.vim')
   call dein#add('ericbn/vim-solarized')
   call dein#add('altercation/vim-colors-solarized')
-  call dein#add('jsit/disco.vim')
-  call dein#add('tomasr/molokai')
-  call dein#add('nanotech/jellybeans.vim') 
-  "call dein#add('fatih/molokai')
-  call dein#add('fmoralesc/molokayo')
-  call dein#add('hzchirs/vim-material')
-  call dein#add('cjoshdick/onedark.vim')
+  "call dein#add('jsit/disco.vim')
+  "call dein#add('tomasr/molokai')
+  "call dein#add('nanotech/jellybeans.vim') 
+  "call dein#add('fmoralesc/molokayo')
+  "call dein#add('hzchirs/vim-material')
+  "call dein#add('cjoshdick/onedark.vim')
 	
   " Airline, devicons
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('ryanoasis/vim-devicons')
+  "call dein#add('vim-airline/vim-airline')
+  "call dein#add('vim-airline/vim-airline-themes')
+  "call dein#add('ryanoasis/vim-devicons')
 
   " Navigation: NERDTree, easymotion, tagbar, buftabline
-  call dein#add('scrooloose/nerdtree')
+  "call dein#add('scrooloose/nerdtree')
   "call dein#add('easymotion/vim-easymotion')
   "call dein#add('majutsushi/tagbar')
   "call dein#add('ap/vim-buftabline')
   
   " Development in general: syntastic, deoplete, splitjoin
   "call dein#add('vim-syntastic/syntastic')
-  "call dein#add('Shougo/deoplete.nvim')
-  "call dein#add('AndrewRadev/splitjoin.vim')
   "call dein#add('SirVer/ultisnips')
-  call dein#add('scrooloose/nerdcommenter')
   " Tables
   "call dein#add('dhruvasagar/vim-table-mode')
 
-  " Golang
-  "call dein#add('fatih/vim-go')
-  "call dein#add('jodosha/vim-godebug')
-  "call dein#add('zchee/deoplete-go', {'build': 'make'})
-  
-
 " Python support
-  call dein#add('vim-scripts/indentpython.vim')
-  call dein#add('nvie/vim-flake8')
-  call dein#add('hdima/python-syntax')
-  "call dein#add('zchee/deoplete-jedi')
-  "call dein#add('davidhalter/jedi-vim')
+  "call dein#add('vim-scripts/indentpython.vim')
+  "call dein#add('nvie/vim-flake8')
+  "call dein#add('hdima/python-syntax')
 
   " Required:
   call dein#end()
@@ -83,9 +71,9 @@ set termguicolors
 set guifont=FantasqueSansMono\ Nerd\ Font\ Regular\ 14
 
 
-:colorscheme hemisu
+:colorscheme solarized8
 set background=dark
-let g:airline_powerline_fonts=1
+" let g:airline_powerline_fonts=1
 
 set completeopt=menu,menuone    " Show popup menu, even if there is one entry
 set pumheight=10                " Completion window max size
@@ -121,19 +109,12 @@ nnoremap <Leader>w :w<CR>
 noremap <Leader>n :cnext<CR>
 nnoremap <Leader>m :cprevious<CR>
 nnoremap <Leader>c :cclose<CR>
-nnoremap <Leader>t :NERDTreeToggle<CR>
+"nnoremap <Leader>t :NERDTreeToggle<CR>
 
 nnoremap <Leader>. :bnext<CR>
 nnoremap <Leader>, :bprev<CR>
 " nnoremap <Leader>/ :Tagbar<CR>
 
-autocmd FileType go nmap <Leader>b  <Plug>(go-build)
-autocmd FileType go nmap <Leader>r  <Plug>(go-run)
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-" Use smartcase.
-let g:deoplete#enable_smart_case = 1
 
 " <C-h>, <BS>: close popup and delete backword char.
 "inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
@@ -144,7 +125,6 @@ let g:deoplete#enable_smart_case = 1
 :set iminsert=0
 :set imsearch=0
 
-let g:airline_detect_iminsert=1
 
 " <CR>: close popup and save indent.
 "inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>

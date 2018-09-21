@@ -7,6 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
+#font = FuraCode NF 20
 font = Inconsolata 20
 #font = Input Mono 19 
 #font = Go Mono 19
@@ -21,7 +22,7 @@ cursor_blink = on
 # "block", "underline" or "ibeam"
 cursor_shape = block
 # $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
+browser = google-chrome-stable
 
 # set size hints for the window
 #size_hints = false
@@ -40,7 +41,7 @@ foreground_bold = #ffffff
 background = #000f25
 
 # 20% background transparency (requires a compositor)
-background = rgba(63, 63, 63, 0.8)
+background = rgba(0, 0, 0, 0.1)
 
 # if unset, will reverse foreground and background
 #highlight = #2f2f2f
@@ -57,7 +58,6 @@ color7 = #dcdccc
 color8 = #709080
 color9 = #dca3a3
 color10 = #c3bf9f
-color11 = #f0dfaf
 color12 = #94bff3
 color13 = #ec93d3
 color14 = #93e0e3
@@ -68,7 +68,7 @@ color15 = #ffffff
 #foreground = #dcdccc
 #background = #3f3f3f
 #active_foreground = #e68080
-#active_background = #3f3f3f
+active_background = rgba(0,0,0,0.5) 
 #padding = 2
 #border = #3f3f3f
 #border_width = 0.5

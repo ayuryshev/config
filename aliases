@@ -1,40 +1,27 @@
 # less, cat, vim
-#alias less='/usr/local/share/nvim/runtime/macros/less.sh'
-alias ct='pygmentize '
 alias vim='nvim'
-alias todo='diar -t TODO'
 alias less=$PAGER
 alias zless=$PAGER
+alias ct='nvimpager -c'
+
 
 # VS Code
-alias ncode='code -n'
-alias rcode='code -r'
-alias c='code . -n -g '
+alias CN='code -n'
+alias CR='code -r'
+alias C='code . -n -g '
 
 # Noname
 alias DESC='sort -n -r'
 alias ASC='sort -n'
 
-# Wallpaper
-alias wp='wallppr'
-alias wpc='wallppr -c'
-alias wpm='wallppr -mv'
-alias wpb='wallppr -b'
-
-# terminals
-alias st-gd='st-gruvdark -f FuraCode\ NF:pixelsize=24:antialias=true:autohint=true'
-alias st-gl='st-gruvlight -f FuraCode\ NF:pixelsize=24:antialias=true:autohint=true'
-
-alias st-id='st-gruvdark -f Input\ Mono:pixelsize=24:antialias=true:autohint=true'
-alias st-il='st-gruvlight -f Input\ Mono:pixelsize=24:antialias=true:autohint=true'
 
 # Colorschemes
 alias dc-zenburn='eval `dircolors /home/isk/.config/dircolors/zenburn.dircolors`'
+alias dc-moonshine='eval `dircolors /home/isk/.config/dircolors/moonshine.dircolors`'
 alias dc-solarized-universal='eval `dircolors /home/isk/.config/dircolors/ansi-universal.dircolors`' 
 alias dc-solarized-dark='eval `dircolors /home/isk/.config/dircolors/solarized-ansi-dark.dircolors`'
 alias dc-solarized-light='eval `dircolors /home/isk/.config/dircolors/solarized-ansi-light.dircolors`'
 alias dc-noname='eval `dircolors /home/isk/.config/dircolors/magnus.dircolors`'
-alias dc-moonshine='eval `dircolors /home/isk/.config/dircolors/moonshine.dircolors`'
 
 #docker
 alias dils='docker images'
@@ -57,6 +44,11 @@ alias cdw='cd /home/isk/work'
 alias cdv='cd /home/isk/Videos && ls'
 alias cdm='cd /home/isk/Music && ls'
 alias cdp='cd /home/isk/Pictures &&ls'
-alias nbg='feh --bg-tile "$(find ~/Pictures/* |shuf | head -1)"'
-alias cdc='cd /home/isk/.config'
+alias cdc='cd /home/isk/.config && cd '
 alias psc='ps xawf -eo pid,user,cgroup,args'
+
+#alias 
+#
+alias ks-ks='source ~/bin/ks-base16 && source ~/bin/ks-dircolors'
+alias @K='echo $(date) \| $ks_theme  \| $ks_dc \| $TERM'
+alias @KS='echo $(date) \| $ks_theme  \| $ks_dc \| $TERM >> ~/ks-db/ks-term.txt'

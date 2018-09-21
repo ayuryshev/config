@@ -137,4 +137,4 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-rofi.theme: /usr/share/rofi/themes/Adapta-Nokto.rasi
+rofi.theme: /usr/share/rofi/themes/gruvbox-light-hard.rasi
